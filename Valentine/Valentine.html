@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family:"Roboto";
+            text-align: center;
+            background-image: url('giphy.gif'); /* Replace 'valentine-background.jpg' with your image file */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+        #container {
+            margin-top: 100px;
+        }
+        h1 {
+            color: #e31b23;
+        }
+        button {
+            padding: 10px 20px;
+           font-size: 16px;
+            background-color: #e31b23;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b10008;
+        }
+        #valentineMessage {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Will You Be My Valentine?</h1>
+        <button id="yesButton">Yes</button>
+        <div id="valentineMessage"></div>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="godspeed frank ocean.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Function to handle the button click event
+        document.getElementById("yesButton").addEventListener("click", function() {
+            var backgroundMusic = document.getElementById("backgroundMusic");
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                document.getElementById("yesButton").textContent = "Pause Song";
+            } else {
+                backgroundMusic.pause();
+                document.getElementById("yesButton").textContent = "Play Song";
+            }
+            yesClicked();
+        });
+
+        // Function to display Valentine's Day message
+        function yesClicked() {
+            var valentineMessage = document.getElementById("valentineMessage");
+            valentineMessage.textContent = "Happy Valentine's Day! MUMU 🤍🤍🤍";
+        }
+    </script>
+</body>
+</html> 
